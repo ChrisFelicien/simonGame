@@ -28,4 +28,11 @@ const removeClass = function (el, className) {
     return $(el).removeClass(className);
   }, 100);
 };
-$(".btn").on("click", nextSequence);
+const startGame = function () {
+  $(".btn").on("click", nextSequence);
+  $("#level-title").text("Click on the button");
+};
+
+$(document).on("keypress", (e) => {
+  e.key.toLowerCase() != "a" ? "" : startGame();
+});
